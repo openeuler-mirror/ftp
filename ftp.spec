@@ -1,6 +1,6 @@
 Name:           ftp
 Version:        0.17
-Release:        79
+Release:        80
 Summary:        The standard UNIX FTP (File Transfer Protocol) client
 License:        BSD with advertising
 URL:            ftp://ftp.linux.org.uk/pub/linux/Networking/netkit
@@ -123,5 +123,8 @@ install -d ${RPM_BUILD_ROOT}%{_mandir}/man5
 %{_mandir}/man5/netrc.*
 
 %changelog
+* Tue Aug 18 2020 chenyaqiang <chenyaqiang@huawei.com> - 0.17-80
+- rebuild for package build
+
 * Wed Sep 11 2019 openEuler jimmy<dukaitian@huawei.com> - 0.17-79
 - Package init jimmy
