@@ -1,6 +1,6 @@
 Name:           ftp
 Version:        0.17
-Release:        80
+Release:        81
 Summary:        The standard UNIX FTP (File Transfer Protocol) client
 License:        BSD with advertising
 URL:            ftp://ftp.linux.org.uk/pub/linux/Networking/netkit
@@ -79,6 +79,7 @@ Patch0034:      netkit-ftp-0.17-token.patch
 Patch6000:      netkit-ftp-0.17-linelen-segfault.patch
 
 BuildRequires:  glibc-devel readline-devel ncurses-devel perl-interpreter gcc
+Requires:       %{name}-help
 
 %description
 The ftp package provides the standard UNIX command-line FTP (File Transfer Protocol) client.
@@ -123,6 +124,12 @@ install -d ${RPM_BUILD_ROOT}%{_mandir}/man5
 %{_mandir}/man5/netrc.*
 
 %changelog
+* Mon Nov 09 2020 quanhongfei <quanhongfei@huawei.com> - 0.17-81
+- Type:requirement
+- ID:NA
+- SUG:NA
+- DESC:add ftp-help dependency for ftp
+
 * Tue Aug 18 2020 chenyaqiang <chenyaqiang@huawei.com> - 0.17-80
 - rebuild for package build
 
