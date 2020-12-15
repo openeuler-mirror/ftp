@@ -1,10 +1,10 @@
 Name:           ftp
 Version:        0.17
-Release:        79
+Release:        80
 Summary:        The standard UNIX FTP (File Transfer Protocol) client
 License:        BSD with advertising
-URL:            ftp://ftp.linux.org.uk/pub/linux/Networking/netkit
-Source0:        ftp://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-ftp-%{version}.tar.gz
+URL:            https://en.wikipedia.org/wiki/File_Transfer_Portocol
+Source0:        https://ftp.linux.org.uk/pub/linux/Networking/netkit/netkit-ftp-%{version}.tar.gz
 
 #PATCH-FIX-https://bugzilla.redhat.com/ patch from fedora project
 Patch0001:      netkit-ftp-0.17-pre20000412.pasv-security.patch
@@ -123,5 +123,11 @@ install -d ${RPM_BUILD_ROOT}%{_mandir}/man5
 %{_mandir}/man5/netrc.*
 
 %changelog
+* Tue Dec 15 2020 xihaochen <xihaochen@huawei.com> - 0.17-80
+- Type:requirement
+- Id:NA
+- SUG:NA
+- DESC:update url, source url
+
 * Wed Sep 11 2019 openEuler jimmy<dukaitian@huawei.com> - 0.17-79
 - Package init jimmy
