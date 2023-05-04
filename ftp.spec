@@ -1,6 +1,6 @@
 Name:           ftp
 Version:        0.17
-Release:        80
+Release:        81
 Summary:        The standard UNIX FTP (File Transfer Protocol) client
 License:        BSD with advertising
 URL:            https://en.wikipedia.org/wiki/File_Transfer_Portocol
@@ -96,7 +96,7 @@ Man pages and other related documents.
 %autosetup -n netkit-%{name}-%{version} -p1
 
 %build
-sh configure --with-c-compiler=gcc --enable-ipv6
+sh configure --with-c-compiler=%{__cc} --enable-ipv6
 perl -pi -e '
     s,^CC=.*$,CC=cc,;
     s,-O2,\$(RPM_OPT_FLAGS) -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64,;
@@ -123,6 +123,12 @@ install -d ${RPM_BUILD_ROOT}%{_mandir}/man5
 %{_mandir}/man5/netrc.*
 
 %changelog
+* Fri Apr 28 2023 liweiganga <liweiganga@uniontech.com> - 0.17-81
+- Type:bugfix
+- Id:NA
+- SUG:NA
+- DESC:support llvm compiler
+
 * Tue Dec 15 2020 xihaochen <xihaochen@huawei.com> - 0.17-80
 - Type:requirement
 - Id:NA
